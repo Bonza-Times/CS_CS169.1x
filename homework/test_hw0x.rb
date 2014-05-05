@@ -117,20 +117,75 @@ end
 
 
 class Hw03Tests < Test::Unit::TestCase
+ 
+  ## price_as_string ##
+  def test_price_as_string()
+    # should display 40.00 as "$40.00"
+    hw03 = BookInStock.new("012345", 40.0)
+    assert_equal(hw03.price_as_string(), "$40.00")
+  end
 
-  # called before every single test
-  def setup
-    @hw03 = BookInStock.new("012345", 40.0)
+  def test_int_passed_not_float()
+    # should display 20 as $20.00
+    hw03 = BookInStock.new("012345", 20)
+    assert_equal(hw03.price_as_string(), "$20.00")
+  end
+
+
+  ## constructor ##
+  def test_invalid_isbn()
+    # should reject invalid ISBN number
+    hw03 = BookInStock.new("", 40.0)
+    assert_raise(ArgumentError){ hw03.price_as_string()}
+  end
+
+  def test_zero_price()
+    # should reject zero price
+    hw03 = BookInStock.new("012345", 0)
+    assert_raise(ArgumentError){ hw03.price_as_string()}
+  end
+
+  def test_negative_price()
+    # should reject negative price
+    hw03 = BookInStock.new("012345", -21.01)
+    assert_raise(ArgumentError){ hw03.price_as_string()}
+  end
+
+
+  ## Failed some tests on so revising input ##
+  def test_reject_invalid_ISBN()
+    # BookInStock constructor should reject invalid ISBN number
+    assert_raise(ArgumentError) {BookInStock.new('', 25.00)}
+  end
+
+  def test_reject_zero_price()
+    # BookInStock constructor should reject zero price
+    assert_raise(ArgumentError) {BookInStock.new('isbn1', 0)}
+  end
+
+  def test_reject_negative_price()
+    # BookInStock constructor should reject negative price
+    assert_raise(ArgumentError) {BookInStock.new('isbn1', -5.0)}
+  end
+
+
+  ## getters and setters ##  
+  def test_isbn_setters_and_getters()
+    hw03 = BookInStock.new("012345", 40.00)
+    # should set ISBN
+    hw03.isbn=("2468")
+    # should be able to get that ISBN
+    assert_equal(hw03.isbn, "2468")
+  end
+
+  def test_price_setters_and_getters()
+    hw03 = BookInStock.new("012345", 40.00)
+    # should set price
+    hw03.price=(22.00)
+    # should be able to get the changed price
+    assert_equal(hw03.price, 22.0)
   end
  
-  # called after every single test
-  def teardown
-    @hw03 = nil
-  end
-  
-  #Begin tests
-  def test_price_as_string()
-    assert_equal(@hw03.price_as_string(), "$40.0")
-  end
-
 end
+
+

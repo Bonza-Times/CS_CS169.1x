@@ -1,4 +1,3 @@
-
 class BookInStock
   """
         Define a class BookInStock which represents a book with an isbn
@@ -61,5 +60,3 @@ class BookInStock
   end
 
 end
-
-
