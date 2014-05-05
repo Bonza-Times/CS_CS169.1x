@@ -1,8 +1,9 @@
 require 'test/unit'
 require_relative 'hw01'
+require_relative 'hw02'
 
-class Hw0xTests < Test::Unit::TestCase
-
+class Hw01Tests < Test::Unit::TestCase
+  
   def test_sum()
     # Init class
     hw01 = Hw0x.new()
@@ -51,6 +52,64 @@ class Hw0xTests < Test::Unit::TestCase
     assert_equal(hw01.sum_to_n?(array_one, n), false)
     assert_equal(hw01.sum_to_n?(array_empty, n), false) 
   end
-
     
+end
+
+
+class Hw02Tests < Test::Unit::TestCase
+
+  def test_hello
+    # Init class
+    hw02 = Hw02.new()
+    # Strings to be used to concatenate
+    first_last = "Tyler Brown"
+    first = "Tyler"
+    # Concat attack
+    assert_equal(hw02.hello(first_last), "Hello, Tyler Brown")
+    assert_equal(hw02.hello(first), "Hello, Tyler")
+  end
+
+  def test_starts_with_consonant?()
+    # Init class
+    hw02 = Hw02.new()
+    # Strings possible beginning with a consenant
+    upper_yes = "Tyler"
+    lower_yes = "diane"
+    upper_no = "Alex"
+    lower_no = "Isaac"
+    number_no = "1dunder"
+    symbol_no = "#selfie"
+    # Matchy matchy
+    assert_equal(hw02.starts_with_consonant?(upper_yes), true)
+    assert_equal(hw02.starts_with_consonant?(lower_yes), true)
+    assert_equal(hw02.starts_with_consonant?(upper_no), false)
+    assert_equal(hw02.starts_with_consonant?(lower_no), false)
+    assert_equal(hw02.starts_with_consonant?(number_no), false)
+    assert_equal(hw02.starts_with_consonant?(symbol_no), false)
+  end
+
+
+  def test_binary_multiple_of_4?()
+    # Init class
+    hw02 = Hw02.new()
+    # String maybe represents a binary number that is a multiple of 4
+    binary_yes1 = "1100100"
+    binary_yes2 = "1000100"
+    binary_no1 = "1100101"
+    binary_no2 = "1100110"
+    not_binary1 = "1105400"
+    not_binary2 = "1300120"
+    not_binary3 = "abcdefg"
+    failed_test = "0"
+    # Binary bonanza
+    assert_equal(hw02.binary_multiple_of_4?(binary_yes1), true)
+    assert_equal(hw02.binary_multiple_of_4?(binary_yes2), true)
+    assert_equal(hw02.binary_multiple_of_4?(binary_no1), false)
+    assert_equal(hw02.binary_multiple_of_4?(binary_no2), true)
+    assert_equal(hw02.binary_multiple_of_4?(not_binary1), false)
+    assert_equal(hw02.binary_multiple_of_4?(not_binary2), false)
+    assert_equal(hw02.binary_multiple_of_4?(not_binary3), false)
+    assert_equal(hw02.binary_multiple_of_4?(failed_test), true)
+  end
+                                              
 end
