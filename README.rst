@@ -1,4 +1,4 @@
-Taking this_ class.
+Taking this_ class. The repo is public for pair programming.
 
 
 
