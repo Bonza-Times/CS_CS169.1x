@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 class BookInStock
   """
         Define a class BookInStock which represents a book with an isbn
@@ -52,6 +56,7 @@ class BookInStock
     return new_price
   end
   
+<<<<<<< HEAD
    
   def price_as_string()
     if self.check_input == true
@@ -60,3 +65,5 @@ class BookInStock
   end
 
 end
+=======
+>>>>>>> master
