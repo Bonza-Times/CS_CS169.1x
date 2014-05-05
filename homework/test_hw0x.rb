@@ -1,6 +1,7 @@
 require 'test/unit'
 require_relative 'hw01'
 require_relative 'hw02'
+require_relative 'hw03'
 
 class Hw01Tests < Test::Unit::TestCase
   
