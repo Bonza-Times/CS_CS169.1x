@@ -1,7 +1,8 @@
 
-class Hw0x
 
-  def sum(int_array)
+## Problem 1
+
+def sum(int_array)
     """
     Define a method sum which takes an array of integers as an argument and
     returns the sum of its elements. For an empty array it should return
@@ -14,8 +15,10 @@ class Hw0x
     return total
   end
 
-  
-  def max_2_sum(int_array)
+
+## Problem 2
+
+def max_2_sum(int_array)
     """
     Define a method max_2_sum which takes an array of integers as an
     argument and returns the sum of its two largest elements. For an empty
@@ -34,8 +37,9 @@ class Hw0x
     end
   end
 
+## Problem 3
 
-  def sum_to_n?(int_array, n)
+def sum_to_n?(int_array, n)
     """
     Define a method sum_to_n? which takes an array of integers and an
     additional integer, n, as arguments and returns true if any two
@@ -68,11 +72,4 @@ class Hw0x
       return false
     end
   end
-      
-  
-end
 
-
-
-
- 

@@ -39,11 +39,17 @@ class Hw0xTests < Test::Unit::TestCase
     array_no =  [10,11,5,8]
     array_one = [5]
     array_empty = []
+
+    # Failed on first test
+    array_true = [3,0,5]
+
+    
     # Test sum skills
+    assert_equal(hw01.sum_to_n?(array_true, 5), true) # Failed this test
     assert_equal(hw01.sum_to_n?(array_yes, n), true)
     assert_equal(hw01.sum_to_n?(array_no, n), false)
     assert_equal(hw01.sum_to_n?(array_one, n), false)
-    assert_equal(hw01.sum_to_n?(array_empty, n), false) # taking too long
+    assert_equal(hw01.sum_to_n?(array_empty, n), false) 
   end
 
     
