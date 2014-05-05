@@ -114,3 +114,23 @@ class Hw02Tests < Test::Unit::TestCase
   end
                                               
 end
+
+
+class Hw03Tests < Test::Unit::TestCase
+
+  # called before every single test
+  def setup
+    @hw03 = BookInStock.new("012345", 40.0)
+  end
+ 
+  # called after every single test
+  def teardown
+    @hw03 = nil
+  end
+  
+  #Begin tests
+  def test_price_as_string()
+    assert_equal(@hw03.price_as_string(), "$40.0")
+  end
+
+end
