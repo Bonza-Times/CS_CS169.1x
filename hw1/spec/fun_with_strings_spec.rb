@@ -1,4 +1,4 @@
-require 'fun_with_strings'
+require_relative 'fun_with_strings'
 require 'debugger'
 
 describe 'palindrome detection', do
