@@ -31,9 +31,9 @@ module FunWithStrings
 
     # Split string by spaces
     res = self.split(//).select {|word| word =~ /[\w+\s]/ }.join   
- 
+    
     count_dict = Hash.new
-    res.each do |word|
+    res.split(" ").each do |word|
       if count_dict.has_key?(word)
         count_dict[word] += 1
       else
@@ -58,6 +58,8 @@ module FunWithStrings
     #       word_dict[word] = 1
     #return word_dict
   end
+
+  
   def anagram_groups
     # your code here
   end
