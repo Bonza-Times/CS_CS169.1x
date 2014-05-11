@@ -1,10 +1,10 @@
 module FunWithStrings
 
-  #def initialize(check_string)
-  #  @check_string = check_string
-  #end
+  def initialize(check_string)
+    @check_string = check_string
+  end
 
-  #attr_accessor :check_string
+  attr_accessor :check_string
   
   def palindrome? 
     """
@@ -20,15 +20,15 @@ module FunWithStrings
        'adam'.palindrome?         # => should return false or nil
     """ 
     # strip punctuation, remove casing, and nonword characters with regex
-   # @check_string = @check_string.sub("[^A-z]", "")
-    #@check_string.lower!
+    @check_string = @check_string.sub("[^A-z]", "")
+    @check_string.lower!
 
     # Does the string read the same forwards and reversed?
-    #if @check_string == @check_string.reverse 
-     #   return true
-    #else
-    #    return false
-    #end
+    if @check_string == @check_string.reverse 
+        return true
+    else
+        return false
+    end
   end
 
   
