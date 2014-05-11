@@ -1,5 +1,5 @@
 module FunWithStrings
-  def palindrome?
+  def palindrome? do 
     """
        A palindrome is a word or phrase that reads the same forwards as
        backwards, ignoring case, punctuation, and nonword characters. (A
