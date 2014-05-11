@@ -1,11 +1,5 @@
 module FunWithStrings
   
-  def initialize(check_string)
-    @check_string = check_string
-  end
-
-  attr_accessor :check_string
-  
   def palindrome? 
     """
        A palindrome is a word or phrase that reads the same forwards as
@@ -20,15 +14,17 @@ module FunWithStrings
        'adam'.palindrome?         # => should return false or nil
     """ 
     # strip punctuation, remove casing, and nonword characters with regex
-    @check_string = @check_string.sub("[^A-z]", "")
-    @check_string.lower!
-
+    #@check_string = @check_string.gsub("[^A-z]", "")
+    rest = self.split(//).select {|word| word =~ /\w+/}.join
+    rest.downcase == rest.downcase.reverse
+    
     # Does the string read the same forwards and reversed?
-    if @check_string == @check_string.reverse 
-        return true
-    else
-        return false
-    end
+    #if @check_string == @check_string.reverse 
+    #    return true
+    #else
+    #    return false
+    #end
+    #end
   end
   
   def count_words
