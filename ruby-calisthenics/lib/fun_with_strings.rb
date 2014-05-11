@@ -30,7 +30,7 @@ module FunWithStrings
   def count_words
 
     # Split string by spaces
-    res = self.split(//).select {|word| word =~ /[\w+\s]/ }.join   
+    res = self.split(//).select {|word| word =~ /[\w+\s]/ }.join.downcase   
     
     count_dict = Hash.new
     res.split(" ").each do |word|
