@@ -76,7 +76,7 @@ module FunWithStrings
 
   end  
   
-    
+end    
 # make all the above functions available as instance methods on Strings:
 
 class String
