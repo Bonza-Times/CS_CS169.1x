@@ -44,14 +44,13 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
-    if(tournament[0][0].is_a? String)
-       tournament_winner(tournament)
-     else
-       tournament_winner(
-                         [tournament_winner(tournament[0]),
-                          tournament_winner(tournament[1])]
-                         )
-       end
+
+    # Check if we're at a game
+    if tournament[0][0].is_a? String
+        return winner(tournament)
+    end
+    # Otherwise keep going down the rabbit hole
+    return winner([tournament_winner(tournament[0]),tournament_winner(tournament[1])])
   end
 
 end
