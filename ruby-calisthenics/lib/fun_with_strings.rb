@@ -45,42 +45,37 @@ module FunWithStrings
 
   
   def anagram_groups
-    require 'set'
     # let's get the words in a list
     res = self.split(//).select {|word| word =~ /[\w+\s]/ }.join
-    use_res = res.downcase!
+    use_res = res.downcase.split(" ")
     # group words by set similarity
     #res.split(" ").each do |word.downcase.to_set|
 
     # this bit groups words by length
-    set_array = []
-    use_res.split(" ").each do |word|
-      word.to_set
-      set_array.push(word)
+    temp_list = []
+    use_res.each do |word.sort|
+      temp_list.push(word)
     end
 
-    master_list = []
-    for item in set_array do
-      temp_list = []
+    master_list
+    temp_list.each do |item|
       count = 0
-      while count < set_array.length
-        if count + 1 < set_array.length and
-            (set_array[count + 1] & set_array[count]).length ==
-            set_array[count].length
-          temp_list.push(set_array[count])
-          temp_list.push(set_array[count + 1])
-          count += 2
-        else
-          temp_list.push(set_array[count])
-          count += 1
+      mini_list = []
+      while count < temp_list.length do
+          if count +1 < temp_list.length and 
+              temp_list[count] == temp_list[count + 1]
+            mini_list.push(temp_list[count])
+            mini_list.push(temp_list[count + 1])
+            count += 1
+          else
+            mini_list.push(temp_list[count]) 
+          end
         end
+        master_list.push(mini_list)
       end
-      master_list.push(temp_list)
-    end
-    
     return master_list
-end
-
+  end
+    
 # make all the above functions available as instance methods on Strings:
 
 class String
