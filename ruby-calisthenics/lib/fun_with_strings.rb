@@ -71,6 +71,8 @@ module FunWithStrings
     # Include a list if an empty string was passed
     if specified_data_structure.length == 0
       specified_data_structure.push([])
+    elif self == ''
+      return specified_data_structure
     end
     return specified_data_structure
 
