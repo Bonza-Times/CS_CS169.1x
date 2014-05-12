@@ -61,7 +61,7 @@ module FunWithStrings
       if anagram_dict.has_key?(sorted_word)
         anagram_dict[sorted_word] = anagram_dict[sorted_word].push(word)
       else
-        anagram_dict[sorted_word] = []
+        anagram_dict[sorted_word] = [word]
       end
     end
 
@@ -71,8 +71,8 @@ module FunWithStrings
     # Include a list if an empty string was passed
     if specified_data_structure.length == 0
       specified_data_structure.push([])
-    elif self == ''
-      return specified_data_structure
+    elsif self.length == 0
+      return []
     end
     return specified_data_structure
 
@@ -84,3 +84,6 @@ end
 class String
   include FunWithStrings
 end
+
+
+  
