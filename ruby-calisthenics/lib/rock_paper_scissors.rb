@@ -45,12 +45,18 @@ class RockPaperScissors
 
   def self.tournament_winner(tournament)
 
-    # Check if we're at a game
-    if tournament[0][0].is_a? String
-        return winner(tournament)
+    if tournament[0].flatten(1).size != tournament[0].size
+      player1 = self.tournament_winner(tournament[0])
+    else
+      player1 = tournament[0]
     end
-    # Otherwise keep going down the rabbit hole
-    return winner(tournament_winner(tournament[0]),tournament_winner(tournament[1]))
+    if tournament[1].flatten(1).size != tournament[1].size
+      player2 = tournament_winner(tournament[1])
+    else
+      player2 = tournament[1]
+    end
+
+    self.winner(player1, player2)
   end
 
 end
