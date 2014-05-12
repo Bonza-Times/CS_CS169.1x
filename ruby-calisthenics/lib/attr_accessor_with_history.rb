@@ -21,6 +21,5 @@ end
 
 
 class Foo 
-  extend Class
   attr_accessor_with_history :bar
 end
