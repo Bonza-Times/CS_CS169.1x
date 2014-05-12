@@ -45,6 +45,9 @@ module FunWithStrings
 
   
   def anagram_groups
+    if self.length == 0
+      return Array.new
+    end
     # let's get the words in a list
     res = self.split(//).select {|word| word =~ /[\w+\s]/ }.join
     use_res = res.split(" ")
