@@ -44,7 +44,7 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
-    if(tournament[0][0].is_a?(String)
+    if(tournament[0][0].is_a? String)
        tournament_winner(tournament)
      else
        tournament_winner(
