@@ -47,34 +47,35 @@ module FunWithStrings
   def anagram_groups
     # let's get the words in a list
     res = self.split(//).select {|word| word =~ /[\w+\s]/ }.join
-    use_res = res.downcase.split(" ")
+    use_res = res.split(" ")
     # group words by set similarity
     #res.split(" ").each do |word.downcase.to_set|
 
-    # this bit groups words by length
-    temp_list = []
-    use_res.each do |word.sort|
-      temp_list.push(word)
+
+    # Make a dictionary where each key is a sorted word mapped to
+    # words with those letters
+
+    anagram_dict = {}
+    use_res.each do |word|
+      sorted_word = word.downcase.chars.sort.join
+      if anagram_dict.has_key?(sorted_word)
+        anagram_dict[sorted_word] = anagram_dict[sorted_word].push(word)
+      else
+        anagram_dict[sorted_word] = []
+      end
     end
 
-    master_list
-    temp_list.each do |item|
-      count = 0
-      mini_list = []
-      while count < temp_list.length do
-          if count +1 < temp_list.length and 
-              temp_list[count] == temp_list[count + 1]
-            mini_list.push(temp_list[count])
-            mini_list.push(temp_list[count + 1])
-            count += 1
-          else
-            mini_list.push(temp_list[count]) 
-          end
-        end
-        master_list.push(mini_list)
-      end
-    return master_list
-  end
+    # Return the data structure as specified in the tests
+    specified_data_structure = []
+    anagram_dict.each_value{|value| specified_data_structure.push(value)}
+    # Include a list if an empty string was passed
+    if specified_data_structure.length == 0
+      specified_data_structure.push([])
+    end
+    return specified_data_structure
+
+  end  
+  
     
 # make all the above functions available as instance methods on Strings:
 
