@@ -50,7 +50,7 @@ class RockPaperScissors
         return winner(tournament)
     end
     # Otherwise keep going down the rabbit hole
-    return winner([tournament_winner(tournament[0]),tournament_winner(tournament[1])])
+    return winner(tournament_winner(tournament[0]),tournament_winner(tournament[1]))
   end
 
 end
