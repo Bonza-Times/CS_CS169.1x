@@ -40,13 +40,22 @@ class RockPaperScissors
       end
     else
       raise NoSuchStrategyError, "Strategy must be one of R,P,S"
-    end
-    
-    
+    end  
   end
 
   def self.tournament_winner(tournament)
-    # YOUR CODE HERE
+    round_winners = []
+
+    if tournament.size == 1 # final condition to stop recursion
+      puts "The winner is #{tournament[0][0]}."
+    else
+      tournament.flatten.each_slice(2) do |l1, l2| # take pairs from your list
+        round_winners << winner(l1,l2)
+      end
+    end
+
+    tournament_winner(tournament)
+    
   end
 
 end
