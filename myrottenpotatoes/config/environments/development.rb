@@ -34,4 +34,7 @@ Myrottenpotatoes::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Prevents mass assignment
+  #config.active_record.mass_assignment_sanitizer = :strict
 end
