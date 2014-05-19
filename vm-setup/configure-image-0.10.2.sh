@@ -73,3 +73,6 @@ gem install flog
 gem install flay
 rvm 1.9.3 do gem install jquery-rails
 gem install fakeweb
+
+# Get Heroku toolbelt for Ubuntu
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh 
