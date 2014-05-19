@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", ip: "192.168.56.105"
 
   # forwarded port
-  config.vm.network "forwarded_port", guest: 80, host: 3000
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
 
   # Use NFS for the shared folder
   config.vm.synced_folder ".", "/working",
